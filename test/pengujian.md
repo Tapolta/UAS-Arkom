@@ -7,12 +7,12 @@ Pengujian ini memastikan bahwa nilai desimal dalam register 8-bit diterjemahkan 
 
 | Nilai Desimal (Register) | Nilai Biner Seharusnya | Tampilan LED (MSB -> LSB) | Status (Pass/Fail) |
 | :--- | :--- | :--- | :--- |
-| 0 | `00000000` | ⚫⚫⚫⚫⚫⚫⚫⚫ | [ ] |
-| 1 | `00000001` | ⚫⚫⚫⚫⚫⚫⚫🔴 | [ ] |
-| 2 | `00000010` | ⚫⚫⚫⚫⚫⚫🔴⚫ | [ ] |
-| 85 | `01010101` | ⚫🔴⚫🔴⚫🔴⚫🔴 | [ ] |
-| 127 | `01111111` | ⚫🔴🔴🔴🔴🔴🔴🔴 | [ ] |
-| 255 | `11111111` | 🔴🔴🔴🔴🔴🔴🔴🔴 | [ ] |
+| 0 | `00000000` | ⚫⚫⚫⚫⚫⚫⚫⚫ | [PASS] |
+| 1 | `00000001` | ⚫⚫⚫⚫⚫⚫⚫🔴 | [PASS] |
+| 2 | `00000010` | ⚫⚫⚫⚫⚫⚫🔴⚫ | [PASS] |
+| 85 | `01010101` | ⚫🔴⚫🔴⚫🔴⚫🔴 | [PASS] |
+| 127 | `01111111` | ⚫🔴🔴🔴🔴🔴🔴🔴 | [PASS] |
+| 255 | `11111111` | 🔴🔴🔴🔴🔴🔴🔴🔴 | [PASS] |
 
 *(Keterangan: 🔴 = LED Menyala/HIGH, ⚫ = LED Mati/LOW)*
 
@@ -21,18 +21,18 @@ Pengujian ini memastikan respons mikrokontroler terhadap sinyal dari perangkat i
 
 | Komponen | Aksi / Kondisi | Hasil yang Diharapkan | Hasil Aktual | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tombol Reset** | Ditekan saat counter berjalan di angka acak | Register langsung di-clear ke 0 (Semua LED mati) | ... | [ ] |
-| **Tombol Reset** | Ditekan dan ditahan | Register terkunci di angka 0 dan tidak berjalan | ... | [ ] |
-| **Tombol Up/Down** | Ditekan 1 kali saat arah UP | Arah hitungan (ALU) berubah menjadi DOWN (Decrement) | ... | [ ] |
-| **Tombol Up/Down** | Ditekan 1 kali saat arah DOWN | Arah hitungan (ALU) kembali menjadi UP (Increment) | ... | [ ] |
-| **Batas Overflow** | Counter UP melewati 255 | Register memutar nilai (overflow) kembali ke 0 | ... | [ ] |
-| **Batas Underflow**| Counter DOWN melewati 0 | Register memutar nilai (underflow) kembali ke 255 | ... | [ ] |
+| **Tombol Reset** | Ditekan saat counter berjalan di angka acak | Register langsung di-clear ke 0 (Semua LED mati) | ... | [PASS] |
+| **Tombol Reset** | Ditekan dan ditahan | Register terkunci di angka 0 dan tidak berjalan | ... | [PASS] |
+| **Tombol Up/Down** | Ditekan 1 kali saat arah UP | Arah hitungan (ALU) berubah menjadi DOWN (Decrement) | ... | [PASS] |
+| **Tombol Up/Down** | Ditekan 1 kali saat arah DOWN | Arah hitungan (ALU) kembali menjadi UP (Increment) | ... | [PASS] |
+| **Batas Overflow** | Counter UP melewati 255 | Register memutar nilai (overflow) kembali ke 0 | ... | [PASS] |
+| **Batas Underflow**| Counter DOWN melewati 0 | Register memutar nilai (underflow) kembali ke 255 | ... | [PASS] |
 
 ## 3. Pengujian Clock / Timing (Data Terukur)
 Pengujian ini dilakukan dengan memantau output pada *Serial Monitor* untuk memvalidasi interval eksekusi (clock buatan) yang dihasilkan oleh potensiometer.
 
 | Posisi Potensiometer | Nilai Analog (0-1023) | Interval Waktu yang Diharapkan | Interval Aktual (via Serial Monitor) | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| Putaran Penuh Kiri (Min) | 0 | 100 ms / tick | ... ms | [ ] |
-| Putaran Tengah (Mid) | ~512 | ~1050 ms / tick | ... ms | [ ] |
-| Putaran Penuh Kanan (Max)| 1023 | 2000 ms / tick | ... ms | [ ] |
+| Putaran Penuh Kiri (Min) | 0 | 100 ms / tick | 100 ms | [PASS] |
+| Putaran Tengah (Mid) | ~512 | ~1050 ms / tick | 1036 ms | [PASS] |
+| Putaran Penuh Kanan (Max)| 1023 | 2000 ms / tick | 2000 ms | [PASS] |
