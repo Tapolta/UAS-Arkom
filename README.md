@@ -32,11 +32,11 @@ Proyek ini dirancang untuk mendemonstrasikan pemahaman dasar mengenai arsitektur
 
 ## Cara Menjalankan Simulasi (Wokwi)
 
-Karena proyek ini disimulasikan menggunakan [Wokwi](https://wokwi.com/), tidak perlu menginstal perangkat lunak fisik apa pun (Arduino IDE tidak diwajibkan). Ikuti langkah-langkah berikut:
+Karena proyek ini disimulasikan menggunakan [Wokwi](https://wokwi.com/), tidak perlu menginstal perangkat lunak fisik apa pun (Arduino IDE tidak diwajibkan). Buka [Wokwi Kami](https://wokwi.com/projects/466191797786914817) atau Ikuti langkah-langkah berikut:
 
 1.  Buka platform Wokwi di browser.
 2.  Buat *project* Arduino Uno baru.
-3.  Salin seluruh kode dari file `src/counter_8bit.ino` di repositori ini dan tempelkan ke editor kode Wokwi (`sketch.ino`).
+3.  Salin seluruh kode dari file `src/sketch.ino` di repositori ini dan tempelkan ke editor kode Wokwi (`sketch.ino`).
 4.  Buka tab `diagram.json` di Wokwi, salin seluruh isi file `src/diagram.json` dari repositori ini, dan tempelkan untuk memuat tata letak komponen.
 5.  Klik tombol **"Play"** (Start the simulation) di pojok kanan atas area kode.
 6.  **Cara interaksi:**
@@ -57,4 +57,4 @@ Karena proyek ini disimulasikan menggunakan [Wokwi](https://wokwi.com/), tidak p
 ## Video Presentasi & Demo
 Silakan tonton video presentasi kelompok kami yang menjelaskan secara detail mengenai cara kerja kode, demonstrasi sistem secara *end-to-end*, dan evaluasi arsitektur melalui tautan berikut:
 
-**Link YouTube:** [MASUKKAN LINK YOUTUBE DI SINI SETELAH UPLOAD]
+**Link YouTube:** [Klik Disini](https://wokwi.com/)
