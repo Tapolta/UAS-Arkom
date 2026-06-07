@@ -1,7 +1,5 @@
 # Dokumen Pengujian Sistem: 8-bit Binary Counter
 
-Dokumen ini berisi pencatatan hasil pengujian fungsional (I/O dan Control Unit) serta pengujian metrik kinerja pada simulator Wokwi. Data terukur di bawah ini digunakan sebagai bahan analisis sistem.
-
 ## 1. Pengujian Representasi Biner (Register ke Output LED)
 Pengujian ini memastikan bahwa nilai desimal dalam register 8-bit diterjemahkan dengan benar ke dalam bentuk biner pada 8 LED bar (LED 7 = MSB, LED 0 = LSB).
 
@@ -21,12 +19,12 @@ Pengujian ini memastikan respons mikrokontroler terhadap sinyal dari perangkat i
 
 | Komponen | Aksi / Kondisi | Hasil yang Diharapkan | Hasil Aktual | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tombol Reset** | Ditekan saat counter berjalan di angka acak | Register langsung di-clear ke 0 (Semua LED mati) | ... | [PASS] |
-| **Tombol Reset** | Ditekan dan ditahan | Register terkunci di angka 0 dan tidak berjalan | ... | [PASS] |
-| **Tombol Up/Down** | Ditekan 1 kali saat arah UP | Arah hitungan (ALU) berubah menjadi DOWN (Decrement) | ... | [PASS] |
-| **Tombol Up/Down** | Ditekan 1 kali saat arah DOWN | Arah hitungan (ALU) kembali menjadi UP (Increment) | ... | [PASS] |
-| **Batas Overflow** | Counter UP melewati 255 | Register memutar nilai (overflow) kembali ke 0 | ... | [PASS] |
-| **Batas Underflow**| Counter DOWN melewati 0 | Register memutar nilai (underflow) kembali ke 255 | ... | [PASS] |
+| **Tombol Reset** | Ditekan saat counter berjalan di angka tertentu | Register langsung di-clear ke 0 (Semua LED mati) | Register = 0, semua LED padam seketika | [PASS] |
+| **Tombol Reset** | Ditekan dan ditahan | Register terkunci di angka 0 dan tidak berjalan | Counter tidak berjalan selama tombol ditahan karena fungsi return memblokir loop | [PASS] |
+| **Tombol Up/Down** | Ditekan 1 kali saat arah UP | Arah hitungan (ALU) berubah menjadi DOWN (Decrement) | Flag isUpDirection berubah false, ALU eksekusi decrement pada tick berikutnya | [PASS] |
+| **Tombol Up/Down** | Ditekan 1 kali saat arah DOWN | Arah hitungan (ALU) kembali menjadi UP (Increment) | Flag isUpDirection berubah true, ALU eksekusi increment pada tick berikutnya | [PASS] |
+| **Batas Overflow** | Counter UP melewati 255 | Register memutar nilai (overflow) kembali ke 0 | uint8_t overflow secara otomatis, register = 0 tanpa kondisi tambahan | [PASS] |
+| **Batas Underflow**| Counter DOWN melewati 0 | Register memutar nilai (underflow) kembali ke 255 | uint8_t underflow secara otomatis, register = 255 tanpa kondisi tambahan | [PASS] |
 
 ## 3. Pengujian Clock / Timing (Data Terukur)
 Pengujian ini dilakukan dengan memantau output pada *Serial Monitor* untuk memvalidasi interval eksekusi (clock buatan) yang dihasilkan oleh potensiometer.
