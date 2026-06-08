@@ -57,4 +57,4 @@ Karena proyek ini disimulasikan menggunakan [Wokwi](https://wokwi.com/), tidak p
 ## Video Presentasi & Demo
 Silakan tonton video presentasi kelompok kami yang menjelaskan secara detail mengenai cara kerja kode, demonstrasi sistem secara *end-to-end*, dan evaluasi arsitektur melalui tautan berikut:
 
-**Link YouTube:** [Klik Disini](https://wokwi.com/)
+**Link YouTube:** [Klik Disini](https://www.youtube.com/watch?v=6D9feE5vEM8)
